@@ -3,10 +3,11 @@ provider "aws" {
   region  = var.region
 }
 
-resource "aws_instance" "devops" {
-tags = {
-  "key" = "Department"
-}
+resource "aws_instance" {
+  tags = {
+    Department = "devops"
+    Billable = true
+  }
 }
 
 resource "aws_vpc" "hashicat" {
